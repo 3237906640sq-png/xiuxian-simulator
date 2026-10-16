@@ -1783,7 +1783,7 @@
 
         <section id="dungeon-panel" class="drawer-panel wide-panel" aria-label="副本">
             <header class="panel-header"><div><span class="panel-eyebrow">险地试炼</span><h2>副本闯荡</h2></div><button class="icon-close" onclick="closePanel()" aria-label="关闭">×</button></header>
-            <p class="panel-note">修为越高，可进入的副本越危险。每次闯荡推进半年，失败可能重伤甚至陨落。</p>
+            <p class="panel-note">修为越高，可进入的副本越危险。每个副本需要连续击败数名敌人，末战还有精英首领；中途撤退没有完整通关奖励。</p>
             <div id="dungeon-list" class="dungeon-list"></div>
         </section>
 
@@ -1956,11 +1956,26 @@
             cloth_robe: { id: 'cloth_robe', name: '玄纹法袍', type: 'equipment', slot: 'armor', rarity: 'common', desc: '刻有基础护身阵纹，防御+6，气血+25。', effect: { defense: 6, hp: 25 } },
             scale_armor: { id: 'scale_armor', name: '蛟鳞宝甲', type: 'equipment', slot: 'armor', rarity: 'rare', desc: '以蛟鳞炼制，防御+16，气血+60。', effect: { defense: 16, hp: 60 } },
             jade_charm: { id: 'jade_charm', name: '护心玉佩', type: 'equipment', slot: 'accessory', rarity: 'rare', desc: '稳定心神，防御+5，气运+2。', effect: { defense: 5, luck: 2 } },
-            breath_manual: { id: 'breath_manual', name: '小周天引气诀', type: 'manual', rarity: 'common', desc: '基础吐纳功法。战斗技能：周天灵掌，伤害倍率1.45。', effect: { power: 1.45, skill: '周天灵掌' } },
-            sword_manual: { id: 'sword_manual', name: '青霄剑诀', type: 'manual', rarity: 'rare', desc: '剑气纵横。战斗技能：青霄一剑，伤害倍率1.8。', effect: { power: 1.8, skill: '青霄一剑' } },
-            body_manual: { id: 'body_manual', name: '金刚锻体经', type: 'manual', rarity: 'rare', desc: '攻守兼备。战斗技能：撼山拳，伤害倍率1.65并强化防御。', effect: { power: 1.65, skill: '撼山拳', defense: 5 } },
-            fire_manual: { id: 'fire_manual', name: '赤阳焚天录', type: 'manual', rarity: 'epic', desc: '至阳火法。战斗技能：赤阳火劫，伤害倍率2.2。', effect: { power: 2.2, skill: '赤阳火劫' } },
-            demon_manual: { id: 'demon_manual', name: '天魔化血经', type: 'manual', rarity: 'epic', desc: '凶险魔功。战斗技能：化血魔印，伤害倍率2.45，自损少量气血。', effect: { power: 2.45, skill: '化血魔印', selfDamage: 6 } }
+            breath_manual: { id: 'breath_manual', name: '小周天引气诀', type: 'manual', rarity: 'common', desc: '气修入门功法。周天灵掌，伤害倍率1.45。', effect: { power: 1.45, skill: '周天灵掌' } },
+            leaf_sword_manual: { id: 'leaf_sword_manual', name: '落叶剑谱', type: 'manual', rarity: 'common', desc: '剑修入门功法。回风落叶剑，伤害倍率1.55，会心率+3%。', effect: { power: 1.55, skill: '回风落叶剑', crit: 0.03 } },
+            iron_skin_manual: { id: 'iron_skin_manual', name: '铁衣功', type: 'manual', rarity: 'common', desc: '体修入门功法。铁山靠，伤害倍率1.42，被动防御+5。', effect: { power: 1.42, skill: '铁山靠', defense: 5 } },
+            herb_flame_manual: { id: 'herb_flame_manual', name: '百草丹火经', type: 'manual', rarity: 'common', desc: '丹修控火法门。青木丹火，伤害倍率1.5，可吸收少量药气恢复。', effect: { power: 1.5, skill: '青木丹火', healRatio: 0.08 } },
+            five_elements_manual: { id: 'five_elements_manual', name: '五行轮转诀', type: 'manual', rarity: 'common', desc: '气修五行法门。五行灵轮，伤害倍率1.58，略微穿透护体灵力。', effect: { power: 1.58, skill: '五行灵轮', pierce: 0.12 } },
+            ghost_breath_manual: { id: 'ghost_breath_manual', name: '幽冥噬魂术', type: 'manual', rarity: 'rare', desc: '邪门魔功。噬魂鬼手，伤害倍率1.72并吸取气血，施展时会轻微反噬。', effect: { power: 1.72, skill: '噬魂鬼手', selfDamage: 3, healRatio: 0.14, demonic: true } },
+            sword_manual: { id: 'sword_manual', name: '青霄剑诀', type: 'manual', rarity: 'rare', desc: '剑气纵横。青霄一剑，伤害倍率1.8，会心率+5%。', effect: { power: 1.8, skill: '青霄一剑', crit: 0.05 } },
+            flowing_sword_manual: { id: 'flowing_sword_manual', name: '流光十三剑', type: 'manual', rarity: 'rare', desc: '迅疾剑诀。流光连斩，三剑合一，伤害倍率2.0。', effect: { power: 2.0, skill: '流光连斩', hits: 3 } },
+            body_manual: { id: 'body_manual', name: '金刚锻体经', type: 'manual', rarity: 'rare', desc: '攻守兼备。撼山拳，伤害倍率1.65，被动防御+7。', effect: { power: 1.65, skill: '撼山拳', defense: 7 } },
+            dragon_body_manual: { id: 'dragon_body_manual', name: '龙象镇狱功', type: 'manual', rarity: 'rare', desc: '龙象巨力加身。镇狱龙拳，伤害倍率1.9，被动防御+11。', effect: { power: 1.9, skill: '镇狱龙拳', defense: 11 } },
+            cauldron_manual: { id: 'cauldron_manual', name: '离火控丹诀', type: 'manual', rarity: 'rare', desc: '丹火凝成赤莲。离火丹莲，伤害倍率1.92，并以药力恢复气血。', effect: { power: 1.92, skill: '离火丹莲', healRatio: 0.12 } },
+            thunder_manual: { id: 'thunder_manual', name: '太虚御雷真诀', type: 'manual', rarity: 'rare', desc: '引雷入法。太虚雷印，伤害倍率2.02，有18%概率麻痹敌人。', effect: { power: 2.02, skill: '太虚雷印', stunChance: 0.18 } },
+            blood_sea_manual: { id: 'blood_sea_manual', name: '血海炼魂经', type: 'manual', rarity: 'epic', desc: '凶厉魔功。血海魔轮，伤害倍率2.22，反噬自身并吸取敌人气血。', effect: { power: 2.22, skill: '血海魔轮', selfDamage: 5, healRatio: 0.22, demonic: true } },
+            fire_manual: { id: 'fire_manual', name: '赤阳焚天录', type: 'manual', rarity: 'epic', desc: '至阳火法。赤阳火劫，伤害倍率2.35，穿透25%防御。', effect: { power: 2.35, skill: '赤阳火劫', pierce: 0.25 } },
+            myriad_sword_manual: { id: 'myriad_sword_manual', name: '万剑归宗', type: 'manual', rarity: 'epic', desc: '上乘剑道传承。万剑归一，伤害倍率2.55，会心率+10%，穿透35%防御。', effect: { power: 2.55, skill: '万剑归一', crit: 0.1, pierce: 0.35, hits: 5 } },
+            immortal_body_manual: { id: 'immortal_body_manual', name: '不灭金身诀', type: 'manual', rarity: 'epic', desc: '上乘体修法门。不灭神拳，伤害倍率2.25，被动防御+18并恢复气血。', effect: { power: 2.25, skill: '不灭神拳', defense: 18, healRatio: 0.16 } },
+            nine_turn_manual: { id: 'nine_turn_manual', name: '九转丹霞经', type: 'manual', rarity: 'epic', desc: '丹霞护体，生生不息。九转丹霞，伤害倍率2.38并恢复大量气血。', effect: { power: 2.38, skill: '九转丹霞', healRatio: 0.25 } },
+            primordial_manual: { id: 'primordial_manual', name: '混元一气经', type: 'manual', rarity: 'epic', desc: '一气演化万法。混元天罡，伤害倍率2.58，穿透30%防御。', effect: { power: 2.58, skill: '混元天罡', pierce: 0.3 } },
+            demon_manual: { id: 'demon_manual', name: '天魔化血经', type: 'manual', rarity: 'epic', desc: '凶险魔功。化血魔印，伤害倍率2.45，自损气血并吸取敌人生命。', effect: { power: 2.45, skill: '化血魔印', selfDamage: 6, healRatio: 0.2, demonic: true } },
+            formless_demon_manual: { id: 'formless_demon_manual', name: '无相天魔典', type: 'manual', rarity: 'epic', desc: '禁忌魔典。无相天魔劫，伤害倍率2.82，代价极大但可吞噬大量气血。', effect: { power: 2.82, skill: '无相天魔劫', selfDamage: 9, healRatio: 0.3, pierce: 0.2, demonic: true } }
         };
 
         const breakthroughPills = {
@@ -1983,16 +1998,20 @@
             { id:'soul_pill', price:2400, minMajor:3 }, { id:'spirit_pill', price:5600, minMajor:4 },
             { id:'void_pill', price:12000, minMajor:5 }, { id:'union_pill', price:26000, minMajor:6 },
             { id:'mahayana_pill', price:56000, minMajor:7 }, { id:'tribulation_pill', price:120000, minMajor:8 },
-            { id:'spirit_beast_egg', price:680, minMajor:1 }
+            { id:'spirit_beast_egg', price:680, minMajor:1 },
+            { id:'leaf_sword_manual', price:220, minMajor:1 }, { id:'iron_skin_manual', price:220, minMajor:1 },
+            { id:'herb_flame_manual', price:260, minMajor:1 }, { id:'five_elements_manual', price:260, minMajor:1 },
+            { id:'flowing_sword_manual', price:920, minMajor:2 }, { id:'dragon_body_manual', price:920, minMajor:2 },
+            { id:'cauldron_manual', price:980, minMajor:2 }, { id:'thunder_manual', price:1080, minMajor:2 }
         ];
 
         const dungeons = [
-            { id: 'mist_valley', name: '灵雾山谷', minRealm: 1, level: '炼气试炼', danger: 1, desc: '雾中盘踞着低阶妖兽，也有采药散修出没。', drops: ['qi_pill','heal_pill','foundation_pill','iron_sword','cloth_robe','breath_manual','spirit_beast_egg'], enemies: [{ name:'铁爪山魈', avatar:'魈', hp:70, attack:12, defense:3, petId:'stone_ape' },{ name:'劫道散修', avatar:'修', hp:64, attack:14, defense:4 }] },
-            { id: 'black_mine', name: '黑风矿洞', minRealm: 3, level: '炼气后期', danger: 2, desc: '废弃灵矿阴风不散，魔修常在深处伏击夺宝。', drops: ['foundation_pill','core_pill','spirit_blade','jade_charm','sword_manual','body_manual','spirit_beast_egg'], enemies: [{ name:'黑风魔修', avatar:'魔', hp:125, attack:23, defense:8 },{ name:'噬金妖蝠', avatar:'蝠', hp:108, attack:26, defense:5, petId:'gold_bat' }] },
-            { id: 'flame_ruins', name: '赤焰遗迹', minRealm: 5, level: '筑基秘地', danger: 3, desc: '古代丹宗遗址，地火与守护傀儡仍未熄灭。', drops: ['core_pill','soul_pill','golden_pill','scale_armor','fire_manual','spirit_blade'], enemies: [{ name:'赤焰灵鸦', avatar:'鸦', hp:230, attack:38, defense:16, petId:'flame_crow' },{ name:'夺宝魔修', avatar:'魔', hp:195, attack:45, defense:12 }] },
-            { id: 'ghost_tomb', name: '幽冥古墓', minRealm: 9, level: '金丹险境', danger: 4, desc: '古墓鬼气森森，埋藏着真人遗宝与夺舍残魂。', drops: ['soul_pill','spirit_pill','golden_pill','demon_saber','scale_armor','demon_manual','fire_manual'], enemies: [{ name:'幽月灵狐', avatar:'狐', hp:430, attack:70, defense:28, petId:'ghost_fox' },{ name:'幽冥邪修', avatar:'邪', hp:380, attack:82, defense:22 }] },
-            { id: 'demon_rift', name: '天魔裂隙', minRealm: 13, level: '元婴绝地', danger: 5, desc: '空间裂隙溢出域外魔气，元婴修士也可能陨落。', drops: ['spirit_pill','void_pill','union_pill','golden_pill','demon_saber','demon_manual','fire_manual'], enemies: [{ name:'雷纹幼蛟', avatar:'蛟', hp:760, attack:125, defense:45, petId:'thunder_drake' },{ name:'元婴魔君', avatar:'君', hp:680, attack:142, defense:38 }] },
-            { id: 'void_palace', name: '太虚仙府', minRealm: 17, level: '化神禁地', danger: 6, desc: '漂浮虚空的残破仙府，禁制与化神残念共同守护传承。', drops: ['void_pill','union_pill','mahayana_pill','tribulation_pill','golden_pill','demon_saber','scale_armor','fire_manual','demon_manual'], enemies: [{ name:'太虚灵鹤', avatar:'鹤', hp:1200, attack:205, defense:76, petId:'void_crane' },{ name:'化神残念', avatar:'神', hp:1080, attack:230, defense:64 }] }
+            { id: 'mist_valley', name: '灵雾山谷', minRealm: 1, level: '炼气试炼', danger: 1, waveCount: 3, desc: '雾中盘踞着低阶妖兽，也有采药散修出没。', drops: ['qi_pill','heal_pill','foundation_pill','iron_sword','cloth_robe','breath_manual','leaf_sword_manual','iron_skin_manual','herb_flame_manual','five_elements_manual','spirit_beast_egg'], enemies: [{ name:'铁爪山魈', avatar:'魈', hp:70, attack:12, defense:3, skill:'裂石爪', petId:'stone_ape' },{ name:'劫道散修', avatar:'修', hp:64, attack:14, defense:4, skill:'夺命飞刃' },{ name:'雾隐毒蛛', avatar:'蛛', hp:62, attack:15, defense:2, skill:'腐灵毒丝' }], boss: { name:'雾谷猿王', avatar:'王', hp:105, attack:18, defense:6, skill:'山崩怒拳', petId:'stone_ape', boss:true } },
+            { id: 'black_mine', name: '黑风矿洞', minRealm: 3, level: '炼气后期', danger: 2, waveCount: 4, desc: '废弃灵矿阴风不散，魔修常在深处伏击夺宝。', drops: ['foundation_pill','core_pill','spirit_blade','jade_charm','sword_manual','body_manual','flowing_sword_manual','dragon_body_manual','ghost_breath_manual','spirit_beast_egg'], enemies: [{ name:'黑风魔修', avatar:'魔', hp:125, attack:23, defense:8, skill:'黑风煞掌' },{ name:'噬金妖蝠', avatar:'蝠', hp:108, attack:26, defense:5, skill:'穿金音波', petId:'gold_bat' },{ name:'矿洞尸傀', avatar:'傀', hp:145, attack:21, defense:12, skill:'阴铁重击' }], boss: { name:'黑风矿主', avatar:'主', hp:185, attack:31, defense:13, skill:'噬灵黑风', boss:true } },
+            { id: 'flame_ruins', name: '赤焰遗迹', minRealm: 5, level: '筑基秘地', danger: 3, waveCount: 4, desc: '古代丹宗遗址，地火与守护傀儡仍未熄灭。', drops: ['core_pill','soul_pill','golden_pill','scale_armor','fire_manual','spirit_blade','cauldron_manual','thunder_manual','flowing_sword_manual'], enemies: [{ name:'赤焰灵鸦', avatar:'鸦', hp:230, attack:38, defense:16, skill:'赤羽火雨', petId:'flame_crow' },{ name:'夺宝魔修', avatar:'魔', hp:195, attack:45, defense:12, skill:'焚血魔火' },{ name:'丹炉火傀', avatar:'傀', hp:260, attack:36, defense:21, skill:'炉心爆炎' }], boss: { name:'赤焰丹宗守炉人', avatar:'炎', hp:340, attack:53, defense:24, skill:'九重地火', boss:true } },
+            { id: 'ghost_tomb', name: '幽冥古墓', minRealm: 9, level: '金丹险境', danger: 4, waveCount: 5, desc: '古墓鬼气森森，埋藏着真人遗宝与夺舍残魂。', drops: ['soul_pill','spirit_pill','golden_pill','demon_saber','scale_armor','demon_manual','fire_manual','blood_sea_manual','myriad_sword_manual','immortal_body_manual'], enemies: [{ name:'幽月灵狐', avatar:'狐', hp:430, attack:70, defense:28, skill:'幽月幻袭', petId:'ghost_fox' },{ name:'幽冥邪修', avatar:'邪', hp:380, attack:82, defense:22, skill:'锁魂鬼印' },{ name:'金丹尸王', avatar:'尸', hp:490, attack:67, defense:36, skill:'尸煞蚀骨' }], boss: { name:'古墓夺舍残魂', avatar:'魂', hp:620, attack:94, defense:41, skill:'万鬼噬魂', boss:true } },
+            { id: 'demon_rift', name: '天魔裂隙', minRealm: 13, level: '元婴绝地', danger: 5, waveCount: 5, desc: '空间裂隙溢出域外魔气，元婴修士也可能陨落。', drops: ['spirit_pill','void_pill','union_pill','golden_pill','demon_saber','demon_manual','fire_manual','primordial_manual','nine_turn_manual','formless_demon_manual'], enemies: [{ name:'雷纹幼蛟', avatar:'蛟', hp:760, attack:125, defense:45, skill:'雷霆吐息', petId:'thunder_drake' },{ name:'元婴魔君', avatar:'君', hp:680, attack:142, defense:38, skill:'天魔裂魂指' },{ name:'裂隙魔眼', avatar:'眼', hp:820, attack:118, defense:54, skill:'乱神魔光' }], boss: { name:'域外天魔化身', avatar:'魔', hp:1030, attack:162, defense:61, skill:'天魔灭世印', boss:true } },
+            { id: 'void_palace', name: '太虚仙府', minRealm: 17, level: '化神禁地', danger: 6, waveCount: 6, desc: '漂浮虚空的残破仙府，禁制与化神残念共同守护传承。', drops: ['void_pill','union_pill','mahayana_pill','tribulation_pill','golden_pill','demon_saber','scale_armor','fire_manual','demon_manual','myriad_sword_manual','immortal_body_manual','nine_turn_manual','primordial_manual','formless_demon_manual'], enemies: [{ name:'太虚灵鹤', avatar:'鹤', hp:1200, attack:205, defense:76, skill:'虚空风刃', petId:'void_crane' },{ name:'化神残念', avatar:'神', hp:1080, attack:230, defense:64, skill:'碎神一指' },{ name:'仙府禁制灵', avatar:'禁', hp:1320, attack:194, defense:91, skill:'太虚禁光' }], boss: { name:'太虚府君残影', avatar:'君', hp:1680, attack:266, defense:105, skill:'太虚寂灭轮', boss:true } }
         ];
 
         const sects = [
@@ -4435,7 +4454,7 @@
                     addLog(`<span class="log-special">【参悟功法】你学会了${item.name}。</span>`);
                 }
                 gameState.activeManual = id;
-                if (id === 'demon_manual') markDemonicCultivator();
+                if (item.effect.demonic) markDemonicCultivator();
             }
             updateStatus();
             renderInventory();
@@ -4450,6 +4469,7 @@
             });
             let manual = gameState.activeManual && itemCatalog[gameState.activeManual];
             if (manual && manual.effect.defense) bonus.defense += manual.effect.defense;
+            if (manual && manual.effect.crit) bonus.crit += manual.effect.crit;
             return bonus;
         }
 
@@ -4618,22 +4638,76 @@
                 return `<article class="dungeon-card ${unlocked ? '' : 'locked'}">
                     <span class="dungeon-level">${dungeon.level} · 危险度 ${dungeon.danger}</span>
                     <h3>${dungeon.name}</h3><p>${dungeon.desc}</p>
-                    <div class="drop-preview">可能掉落：丹药、装备、功法 · 已通关 ${clears} 次</div>
+                    <div class="drop-preview">连续 ${dungeon.waveCount || 3} 战 · 末战首领 · 已通关 ${clears} 次</div>
                     <button ${unlocked ? '' : 'disabled'} onclick="startDungeon('${dungeon.id}')">${unlocked ? '进入副本' : `${realm}解锁`}</button>
                 </article>`;
             }).join('');
         }
 
+        function createDungeonEnemy(template, waveIndex, dungeon) {
+            let realmScale = 1 + Math.max(0, gameState.realmIndex - dungeon.minRealm) * 0.035;
+            let waveScale = 1 + waveIndex * 0.075 + (template.boss ? 0.06 + dungeon.danger * 0.012 : 0);
+            let scale = realmScale * waveScale;
+            let maxHp = Math.round(template.hp * scale);
+            return {
+                ...template,
+                maxHp,
+                hp: maxHp,
+                attack: template.attack * scale,
+                defense: template.defense * scale
+            };
+        }
+
+        function renderCombatActions() {
+            let manual = getActiveManual();
+            let effects = [];
+            if (manual.effect.pierce) effects.push(`穿甲${Math.round(manual.effect.pierce * 100)}%`);
+            if (manual.effect.healRatio) effects.push('恢复气血');
+            if (manual.effect.stunChance) effects.push('可能麻痹');
+            let skillDesc = effects.length ? effects.join(' · ') : '高伤害，冷却2回合';
+            document.getElementById('combat-actions').innerHTML = `<button onclick="combatAction('attack')"><strong>普通攻击</strong><small>稳定造成伤害</small></button><button onclick="combatAction('skill')"><strong>${manual.effect.skill}</strong><small>${skillDesc}</small></button><button onclick="combatAction('defend')"><strong>护体防御</strong><small>本回合大幅减伤</small></button><button onclick="combatAction('flee')"><strong>遁走</strong><small>放弃本次所有奖励</small></button>`;
+        }
+
+        function loadDungeonWave(waveIndex, opening = false) {
+            if (!combatState) return;
+            let template = combatState.encounters[waveIndex];
+            combatState.waveIndex = waveIndex;
+            combatState.enemy = createDungeonEnemy(template, waveIndex, combatState.dungeon);
+            combatState.defending = false;
+            combatState.skillCooldown = 0;
+            combatState.turn = 1;
+            combatState.locked = false;
+            combatState.tameOffered = false;
+            let waveNumber = waveIndex + 1;
+            let isBoss = Boolean(template.boss);
+            document.getElementById('combat-location').textContent = `${combatState.dungeon.name} · 第${waveNumber}/${combatState.totalWaves}战`;
+            document.getElementById('combat-title').textContent = `${isBoss ? '首领' : '遭遇'}：${template.name}`;
+            document.getElementById('enemy-name').textContent = template.name;
+            document.querySelector('#enemy-fighter .fighter-avatar').textContent = template.avatar;
+            document.getElementById('tame-prompt').classList.remove('open');
+            renderCombatActions();
+            addCombatLog(opening ? `你踏入${combatState.dungeon.name}，${template.name}挡住了去路。` : `${isBoss ? '深处威压骤然降临' : '你继续深入'}，${template.name}现身拦路。`, isBoss ? 'damage' : '');
+            updateCombatUI();
+        }
+
         function startDungeon(id) {
             let dungeon = dungeons.find(item => item.id === id);
             if (!dungeon || gameState.realmIndex < dungeon.minRealm || !gameState.alive) return;
-            let template = dungeon.enemies[Math.floor(Math.random() * dungeon.enemies.length)];
-            let scale = 1 + Math.max(0, gameState.realmIndex - dungeon.minRealm) * 0.035;
+            let totalWaves = dungeon.waveCount || Math.max(3, dungeon.danger + 2);
+            let encounters = [];
+            for (let i = 0; i < totalWaves - 1; i++) {
+                encounters.push(dungeon.enemies[Math.floor(Math.random() * dungeon.enemies.length)]);
+            }
+            encounters.push(dungeon.boss || dungeon.enemies[Math.floor(Math.random() * dungeon.enemies.length)]);
             let bonuses = getEquippedBonuses();
             let playerMaxHp = Math.max(1, gameState.maxHealth + bonuses.hp);
             combatState = {
                 dungeon,
-                enemy: { ...template, maxHp: Math.round(template.hp * scale), hp: Math.round(template.hp * scale), attack: template.attack * scale, defense: template.defense * scale },
+                encounters,
+                totalWaves,
+                waveIndex: 0,
+                defeatedEnemies: [],
+                enemy: null,
                 playerMaxHp,
                 playerHp: Math.min(playerMaxHp, gameState.health + bonuses.hp),
                 defending: false,
@@ -4645,16 +4719,8 @@
             };
             document.querySelectorAll('.drawer-panel').forEach(panel => panel.classList.remove('active'));
             document.getElementById('combat-panel').classList.add('active');
-            document.getElementById('combat-location').textContent = dungeon.name;
-            document.getElementById('combat-title').textContent = `遭遇${template.name}`;
-            document.getElementById('enemy-name').textContent = template.name;
-            document.querySelector('#enemy-fighter .fighter-avatar').textContent = template.avatar;
             document.getElementById('combat-log').innerHTML = '';
-            document.getElementById('tame-prompt').classList.remove('open');
-            let manual = getActiveManual();
-            document.getElementById('combat-actions').innerHTML = `<button onclick="combatAction('attack')"><strong>普通攻击</strong><small>稳定造成伤害</small></button><button onclick="combatAction('skill')"><strong>${manual.effect.skill}</strong><small>高伤害，冷却2回合</small></button><button onclick="combatAction('defend')"><strong>护体防御</strong><small>本回合大幅减伤</small></button><button onclick="combatAction('flee')"><strong>遁走</strong><small>依据气运尝试逃离</small></button>`;
-            addCombatLog(`你踏入${dungeon.name}，${template.name}挡住了去路。`, '');
-            updateCombatUI();
+            loadDungeonWave(0, true);
         }
 
         function getPlayerBattleStats() {
@@ -4694,30 +4760,45 @@
             } else {
                 let multiplier = 1;
                 let attackName = '普通攻击';
+                let manualEffect = {};
+                let enemyStunned = false;
                 if (action === 'skill') {
                     if (combatState.skillCooldown > 0) {
                         addCombatLog(`功法尚需${combatState.skillCooldown}回合才能再次施展。`, 'damage');
                         return;
                     }
                     let manual = getActiveManual();
-                    multiplier = manual.effect.power || 1.4;
-                    attackName = manual.effect.skill;
+                    manualEffect = manual.effect || {};
+                    multiplier = manualEffect.power || 1.4;
+                    attackName = manualEffect.skill;
                     combatState.skillCooldown = 3;
-                    if (manual.effect.selfDamage) {
-                        combatState.playerHp = Math.max(1, combatState.playerHp - manual.effect.selfDamage);
-                        addCombatLog(`${attackName}反噬自身，气血-${manual.effect.selfDamage}。`, 'damage');
+                    if (manualEffect.selfDamage) {
+                        combatState.playerHp = Math.max(1, combatState.playerHp - manualEffect.selfDamage);
+                        addCombatLog(`${attackName}反噬自身，气血-${manualEffect.selfDamage}。`, 'damage');
                     }
                 }
                 let critical = Math.random() < stats.crit;
                 let raw = stats.attack * multiplier * (0.88 + Math.random() * 0.24) * (critical ? 1.65 : 1);
-                let damage = Math.max(1, Math.round(raw - combatState.enemy.defense * 0.55));
+                let pierce = action === 'skill' ? (manualEffect.pierce || 0) : 0;
+                let damage = Math.max(1, Math.round(raw - combatState.enemy.defense * 0.55 * (1 - pierce)));
                 combatState.enemy.hp = Math.max(0, combatState.enemy.hp - damage);
                 animateFighter('player-fighter', 'attack');
                 animateFighter('enemy-fighter', 'hit');
-                addCombatLog(`你施展${attackName}，对${combatState.enemy.name}造成${damage}点伤害${critical ? '（会心一击）' : ''}。`, 'good');
+                let hitText = manualEffect.hits ? `（${manualEffect.hits}段连击）` : '';
+                addCombatLog(`你施展${attackName}，对${combatState.enemy.name}造成${damage}点伤害${critical ? '（会心一击）' : ''}${hitText}。`, 'good');
+                if (action === 'skill' && manualEffect.healRatio) {
+                    let healing = Math.min(combatState.playerMaxHp - combatState.playerHp, Math.max(1, Math.round(damage * manualEffect.healRatio)));
+                    if (healing > 0) {
+                        combatState.playerHp += healing;
+                        addCombatLog(`功法运转生机回流，你恢复${healing}点气血。`, 'good');
+                    }
+                }
+                if (action === 'skill' && manualEffect.stunChance && Math.random() < manualEffect.stunChance) {
+                    enemyStunned = true;
+                }
                 updateCombatUI();
                 if (combatState.enemy.hp <= 0) {
-                    finishCombat('victory');
+                    handleEnemyDefeated(false);
                     return;
                 }
                 if (tryOfferTame(stats)) return;
@@ -4728,10 +4809,16 @@
                     addCombatLog(`${petData.base.name}施展${petData.base.skill}，追加${petDamage}点伤害。`, 'good');
                     updateCombatUI();
                     if (combatState.enemy.hp <= 0) {
-                        finishCombat('victory');
+                        handleEnemyDefeated(false);
                         return;
                     }
                     if (tryOfferTame(stats)) return;
+                }
+                if (enemyStunned) {
+                    if (combatState.skillCooldown > 0) combatState.skillCooldown--;
+                    addCombatLog(`${combatState.enemy.name}经脉麻痹，本回合无法反击！`, 'good');
+                    combatState.turn++;
+                    return;
                 }
             }
 
@@ -4740,7 +4827,7 @@
         }
 
         function enemyTurn(stats) {
-            let heavy = Math.random() < 0.22;
+            let heavy = Math.random() < (combatState.enemy.boss ? 0.32 : 0.22);
             let raw = combatState.enemy.attack * (0.86 + Math.random() * 0.28) * (heavy ? 1.45 : 1);
             let reduction = stats.defense * 0.5;
             let damage = Math.max(1, Math.round(raw - reduction));
@@ -4748,7 +4835,8 @@
             combatState.playerHp = Math.max(0, combatState.playerHp - damage);
             animateFighter('enemy-fighter', 'attack');
             animateFighter('player-fighter', 'hit');
-            addCombatLog(`${combatState.enemy.name}${heavy ? '发动凶狠杀招' : '发起攻击'}，你受到${damage}点伤害。`, 'damage');
+            let enemyMove = heavy ? `施展${combatState.enemy.skill || '凶狠杀招'}` : '发起攻击';
+            addCombatLog(`${combatState.enemy.name}${enemyMove}，你受到${damage}点伤害。`, 'damage');
             combatState.turn++;
             updateCombatUI();
             if (combatState.playerHp <= 0) finishCombat('defeat');
@@ -4786,11 +4874,44 @@
                 addPet(petId, `${combatState.dungeon.name}收服`);
                 addCombatLog(`灵契落成，${petCatalog[petId].name}低下头颅，成为你的灵宠！`, 'good');
                 addLog(`<span class="log-special">【收服灵宠】你在${combatState.dungeon.name}收服了${petCatalog[petId].name}。</span>`);
-                finishCombat('tamed');
+                handleEnemyDefeated(true);
             } else {
                 addCombatLog('灵契被妖兽强行震碎，收服失败！', 'damage');
                 enemyTurn(stats);
             }
+        }
+
+        function handleEnemyDefeated(tamed) {
+            if (!combatState || combatState.finished) return;
+            let enemyName = combatState.enemy.name;
+            combatState.enemy.hp = 0;
+            combatState.defeatedEnemies.push(enemyName);
+            addCombatLog(tamed ? `${enemyName}被你收服，本战结束。` : `${enemyName}倒下了。`, 'good');
+            updateCombatUI();
+
+            if (combatState.waveIndex >= combatState.totalWaves - 1) {
+                addCombatLog(`你击败了副本首领，${combatState.dungeon.name}再无敌手阻拦。`, 'good');
+                finishCombat('victory');
+                return;
+            }
+
+            combatState.locked = true;
+            let recovery = Math.max(1, Math.round(combatState.playerMaxHp * 0.06));
+            combatState.playerHp = Math.min(combatState.playerMaxHp, combatState.playerHp + recovery);
+            addCombatLog(`你搜寻片刻并调息伤势，恢复${recovery}点气血。前方还有${combatState.totalWaves - combatState.waveIndex - 1}战。`, 'good');
+            document.getElementById('combat-actions').innerHTML = `<button onclick="continueDungeon()"><strong>继续深入</strong><small>迎战第${combatState.waveIndex + 2}战</small></button><button onclick="retreatDungeon()"><strong>见好就收</strong><small>撤离副本，不获通关掉落</small></button>`;
+            updateCombatUI();
+        }
+
+        function continueDungeon() {
+            if (!combatState || combatState.finished || !combatState.locked) return;
+            loadDungeonWave(combatState.waveIndex + 1, false);
+        }
+
+        function retreatDungeon() {
+            if (!combatState || combatState.finished) return;
+            addCombatLog('你衡量伤势后决定不再深入，沿原路退出副本。', '');
+            finishCombat('retreat');
         }
 
         function animateFighter(id, className) {
@@ -4803,7 +4924,8 @@
 
         function addCombatLog(text, type) {
             let log = document.getElementById('combat-log');
-            log.insertAdjacentHTML('beforeend', `<div class="${type || ''}">第${combatState.turn}回合 · ${text}</div>`);
+            let waveLabel = combatState.totalWaves ? `第${combatState.waveIndex + 1}/${combatState.totalWaves}战` : '战斗';
+            log.insertAdjacentHTML('beforeend', `<div class="${type || ''}">${waveLabel} · 第${combatState.turn}回合 · ${text}</div>`);
             log.scrollTop = log.scrollHeight;
         }
 
@@ -4818,8 +4940,15 @@
         }
 
         function rollDungeonDrops(dungeon) {
-            let count = 1 + (Math.random() < Math.min(0.65, 0.18 + Math.max(0, gameState.luck) * 0.018) ? 1 : 0);
+            let count = 1 + Math.floor(dungeon.danger / 3) + (Math.random() < Math.min(0.65, 0.18 + Math.max(0, gameState.luck) * 0.018) ? 1 : 0);
             let gained = [];
+            let firstClear = !(gameState.dungeonClears[dungeon.id] > 0);
+            let manualDrops = dungeon.drops.filter(id => itemCatalog[id] && itemCatalog[id].type === 'manual');
+            if (manualDrops.length && (firstClear || Math.random() < 0.3)) {
+                let manualId = manualDrops[Math.floor(Math.random() * manualDrops.length)];
+                addInventoryItem(manualId, 1, false);
+                gained.push(itemCatalog[manualId].name);
+            }
             for (let i = 0; i < count; i++) {
                 let id = dungeon.drops[Math.floor(Math.random() * dungeon.drops.length)];
                 addInventoryItem(id, 1, false);
@@ -4853,26 +4982,22 @@
             let actions = document.getElementById('combat-actions');
             if (result === 'victory') {
                 let drops = rollDungeonDrops(combatState.dungeon);
-                let rewardCult = 10 * combatState.dungeon.danger + Math.round(Math.random() * 10);
-                let rewardStones = 20 * combatState.dungeon.danger + Math.round(Math.random() * 30);
+                let rewardCult = 7 * combatState.dungeon.danger + combatState.totalWaves * 3 + Math.round(Math.random() * 8);
+                let rewardStones = 18 * combatState.dungeon.danger + combatState.totalWaves * 8 + Math.round(Math.random() * 30);
                 gameState.cultivation += rewardCult;
                 gameState.stones += rewardStones;
                 gameState.dungeonClears[combatState.dungeon.id] = (gameState.dungeonClears[combatState.dungeon.id] || 0) + 1;
-                grantActivePetExperience(18 + combatState.dungeon.danger * 7);
-                addCombatLog(`战斗胜利！获得${drops.join('、')}，修为+${rewardCult}，灵石+${rewardStones}。`, 'good');
-                addLog(`<span class="log-special">【副本通关】你击败${combatState.enemy.name}，从${combatState.dungeon.name}带回${drops.join('、')}。</span>`);
+                grantActivePetExperience(combatState.totalWaves * 12 + combatState.dungeon.danger * 6);
+                addCombatLog(`连续战斗胜利！获得${drops.join('、')}，修为+${rewardCult}，灵石+${rewardStones}。`, 'good');
+                addLog(`<span class="log-special">【副本通关】你连败${combatState.defeatedEnemies.join('、')}，从${combatState.dungeon.name}带回${drops.join('、')}。</span>`);
                 checkRealmBreakthrough();
                 advanceMonth(6, 'dungeon');
                 actions.innerHTML = '<button onclick="leaveCombat()"><strong>收取战利品</strong><small>返回修仙日常</small></button>';
-            } else if (result === 'tamed') {
-                let rewardCult = 5 * combatState.dungeon.danger;
-                gameState.cultivation += rewardCult;
-                gameState.dungeonClears[combatState.dungeon.id] = (gameState.dungeonClears[combatState.dungeon.id] || 0) + 1;
-                checkRealmBreakthrough();
-                advanceMonth(6, 'dungeon');
-                actions.innerHTML = '<button onclick="leaveCombat()"><strong>带灵宠离开</strong><small>返回修仙日常</small></button>';
+            } else if (result === 'retreat') {
+                advanceMonth(3, 'dungeon');
+                actions.innerHTML = `<button onclick="leaveCombat()"><strong>安全撤离</strong><small>已击败${combatState.defeatedEnemies.length}名敌人，无通关掉落</small></button>`;
             } else if (result === 'flee') {
-                advanceMonth(6, 'dungeon');
+                advanceMonth(3, 'dungeon');
                 actions.innerHTML = '<button onclick="leaveCombat()"><strong>离开副本</strong><small>此次没有获得战利品</small></button>';
             } else {
                 gameState.health = 0;
